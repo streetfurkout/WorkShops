@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.util.Scanner;
+
 public class NeighborhoodLibrary {
     //our library can have 20 books
     private static Book[] books = new  Book[20];
@@ -29,10 +31,51 @@ public class NeighborhoodLibrary {
         books[18] = new Book(130, "19th", "19thbook", false, " ");
         books[19] = new Book(131, "2oth", "20thbook", false, " ");
 
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("1- The Store Home Screen. (This option displays Available and Checked Out Books)");
+            System.out.println("2- Show Avaliable Books. (Displays a list of all books that are not currently checked out and displays Id, ISBN and Title of the Book)");
+            System.out.println("3- Show Checked Out Books. (Displays a list of all the books that are currently checked out. Display the Id, ISBN, Title and Name f person who has the book checked out)");
+
+            // Read the user's input command.
+            int command = scanner.nextInt();
+            // Consume the newline character left in the scanner buffer after reading the command.
+            scanner.nextLine();
+
+            switch (command) {
+                case 1:
+                    showAvaliableBooks();
+                    showCheckedOutBooks();
+                    exit();
+                    break;
+
+                case 2:
+
+                    break;
+
+                case 3:
+
+                    break;
 
 
+            }
+        }
 
+    }
+    public static void showAvaliableBooks() {
+        System.out.println("List of available books: ");
+    }
+    public static void showCheckedOutBooks() {
+            System.out.println("Checked out books: ");
+
+        }
+
+    public static void exit (){
+        return ;
+    }
 
 
     }
-}
+
+
