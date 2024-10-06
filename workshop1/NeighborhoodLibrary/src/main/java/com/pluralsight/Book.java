@@ -39,11 +39,11 @@ public class Book {
         this.title = title;
     }
 
-    public boolean isCheckedOut() {
+    public boolean getIsCheckedOut() {
         return isCheckedOut;
     }
 
-    public void setCheckedOut(boolean checkedOut) {
+    public void setIsCheckedOut(boolean checkedOut) {
         isCheckedOut = checkedOut;
     }
 
@@ -63,6 +63,17 @@ public class Book {
         this.checkedOutTo = "";
         this.isCheckedOut = false;
 
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", isbn='" + isbn + '\'' +
+                ", title='" + title + '\'' +
+                ", isCheckedOut=" + isCheckedOut +
+                ", checkedOutTo='" + checkedOutTo + '\'' +
+                '}';
     }
 }
 

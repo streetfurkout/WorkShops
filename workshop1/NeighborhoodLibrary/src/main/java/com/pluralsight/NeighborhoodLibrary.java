@@ -34,10 +34,10 @@ public class NeighborhoodLibrary {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("1- The Store Home Screen. (This option displays Available and Checked Out Books)");
-            System.out.println("2- Show Avaliable Books. (Displays a list of all books that are not currently checked out and displays Id, ISBN and Title of the Book)");
-            System.out.println("3- Show Checked Out Books. (Displays a list of all the books that are currently checked out. Display the Id, ISBN, Title and Name f person who has the book checked out)");
-
+            System.out.println("The Store Home Screen.");
+            System.out.println("1- Show Available Books. (Displays a list of all books that are not currently checked out and displays Id, ISBN and Title of the Book)");
+            System.out.println("2- Show Checked Out Books. (Displays a list of all the books that are currently checked out. Display the Id, ISBN, Title and Name f person who has the book checked out)");
+            System.out.println("3- Exit");
             // Read the user's input command.
             int command = scanner.nextInt();
             // Consume the newline character left in the scanner buffer after reading the command.
@@ -45,17 +45,17 @@ public class NeighborhoodLibrary {
 
             switch (command) {
                 case 1:
-                    showAvaliableBooks();
-                    showCheckedOutBooks();
-                    exit();
+                    showAvailableBooks();
+
+
                     break;
 
                 case 2:
-
+                    showCheckedOutBooks();
                     break;
 
                 case 3:
-
+                    exit();
                     break;
 
 
@@ -63,16 +63,30 @@ public class NeighborhoodLibrary {
         }
 
     }
-    public static void showAvaliableBooks() {
-        System.out.println("List of available books: ");
+    public static void showAvailableBooks() {
+        System.out.println("List of available books: " );
+        for (Book book : books ){
+
+            if(!book.getIsCheckedOut()){
+                System.out.println(book);
+
+            }
+        }
     }
     public static void showCheckedOutBooks() {
             System.out.println("Checked out books: ");
+        for (Book book : books ){
+
+            if(book.getIsCheckedOut()){
+                System.out.println(book);
+
+            }
+        }
 
         }
 
     public static void exit (){
-        return ;
+        return;
     }
 
 
