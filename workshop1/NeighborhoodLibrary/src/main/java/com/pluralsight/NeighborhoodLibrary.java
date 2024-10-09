@@ -55,8 +55,17 @@ public class NeighborhoodLibrary {
                     break;
 
                 case 3:
+
+                    System.out.println("Have a good day!");
                     exit();
+
                     break;
+
+                //if the use will put an another input than our list
+                default:
+                    System.out.println("invalid command");
+                    break;
+
 
 
             }
@@ -72,7 +81,7 @@ public class NeighborhoodLibrary {
 
             }
         }
-        
+
     }
     public static void showCheckedOutBooks() {
             System.out.println("Checked out books: ");
@@ -80,6 +89,9 @@ public class NeighborhoodLibrary {
 
             if(book.getIsCheckedOut()){
                 System.out.println(book);
+
+
+
 
             }
         }
