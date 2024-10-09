@@ -137,11 +137,14 @@ public class NeighborhoodLibrary {
 
             System.out.println("Please enter the ID of the book.");
             int idOfBook = scanner.nextInt();
-            scanner.nextInt();
+            //scanner.nextInt();
             for (Book book : books) {
 
                 if (book.getId() == idOfBook) {
                     book.setIsCheckedOut(false);
+
+                if (book.getIsCheckedOut() == false);
+                    book.setCheckedOutTo("");
 
 
 
