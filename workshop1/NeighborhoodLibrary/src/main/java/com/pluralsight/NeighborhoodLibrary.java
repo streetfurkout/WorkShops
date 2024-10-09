@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class NeighborhoodLibrary {
     //our library can have 20 books
-    private static Book[] books = new  Book[20];
+    private static Book[] books = new Book[20];
 
-
+    private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
 
@@ -31,7 +31,6 @@ public class NeighborhoodLibrary {
         books[18] = new Book(130, "19th", "19thbook", false, " ");
         books[19] = new Book(131, "2oth", "20thbook", false, " ");
 
-        Scanner scanner = new Scanner(System.in);
 
         while (true) {
             System.out.println("The Store Home Screen.");
@@ -67,42 +66,67 @@ public class NeighborhoodLibrary {
                     break;
 
 
-
             }
         }
 
     }
+
     public static void showAvailableBooks() {
-        System.out.println("List of available books: " );
-        for (Book book : books ){
+        //Scanner scanner = new Scanner(System.in);
+        System.out.println("List of available books: ");
+        for (Book book : books) {
 
-            if(!book.getIsCheckedOut()){
+            if (!book.getIsCheckedOut()) {
                 System.out.println(book);
 
+                // String selection = scanner.nextLine();
+                // scanner.nextLine();
+
+
+
+                }
             }
+
+
+        System.out.println("1-Would you like to pick up a book from the list?");
+        System.out.println("2-Go to home screen.");
+        int selection = scanner.nextInt();
+        scanner.nextLine();
+
+        if (selection == 1){
+            bookCheckingOut();
         }
 
+        }
+    public static String bookCheckingOut() {
+        //Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter the name of the book");
+        String chosedBook = scanner.nextLine();
+        scanner.nextLine();
+
+
+
     }
-    public static void showCheckedOutBooks() {
+        public static void showCheckedOutBooks () {
             System.out.println("Checked out books: ");
-        for (Book book : books ){
+            for (Book book : books) {
 
-            if(book.getIsCheckedOut()){
-                System.out.println(book);
-
-
+                if (book.getIsCheckedOut()) {
+                    System.out.println(book);
 
 
+                }
             }
-        }
 
         }
 
-    public static void exit (){
-        return;
-    }
+
+        public static void exit () {
+            return;
+        }
 
 
     }
+
 
 
