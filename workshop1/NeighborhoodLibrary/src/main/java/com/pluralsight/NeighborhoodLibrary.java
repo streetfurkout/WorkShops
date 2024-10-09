@@ -76,6 +76,8 @@ public class NeighborhoodLibrary {
     public static void showAvailableBooks() {
         //Scanner scanner = new Scanner(System.in);
         System.out.println("List of available books: ");
+
+        // We are checking for each object of our array
         for (Book book : books) {
 
             if (!book.getIsCheckedOut()) {
@@ -110,8 +112,9 @@ public class NeighborhoodLibrary {
 
         System.out.println("Please enter the name of the book.");
         String choosedBook = scanner.nextLine();
-        //scanner.nextLine(); //actually we don`t need that because while we are working with string we dont need that
+        //scanner.nextLine(); (actually we don`t need that because while we are working with string we don`t need that)
 
+        // We are checking for each object of our array
         for ( Book abuzer : books) {
             if (abuzer.getTitle().equalsIgnoreCase(choosedBook)) {
                 abuzer.setIsCheckedOut(true);
@@ -128,17 +131,27 @@ public class NeighborhoodLibrary {
 
     }
         public static void showCheckedOutBooks () {
-            System.out.println("Checked out books: ");
+
+            System.out.println("Please enter your name.");
+            String nameOfCustomer = scanner.nextLine();
+
+            System.out.println("Please enter the ID of the book.");
+            int idOfBook = scanner.nextInt();
+            scanner.nextInt();
             for (Book book : books) {
 
-                if (book.getIsCheckedOut()) {
-                    System.out.println(book);
+                if (book.getId() == idOfBook) {
+                    book.setIsCheckedOut(false);
+
 
 
                 }
             }
 
         }
+
+
+
 
 
         public static void exit () {
