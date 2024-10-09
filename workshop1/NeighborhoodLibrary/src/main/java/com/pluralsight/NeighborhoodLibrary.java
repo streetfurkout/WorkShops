@@ -105,12 +105,12 @@ public class NeighborhoodLibrary {
     public static void bookCheckingOut() {
         //Scanner scanner = new Scanner(System.in);
         //We signed up our customer
-        System.out.println("Please enter your name?");
+        System.out.println("Please enter your name.");
         String nameOfCustomer = scanner.nextLine();
 
-        System.out.println("Please enter the name of the book");
+        System.out.println("Please enter the name of the book.");
         String choosedBook = scanner.nextLine();
-        scanner.nextLine(); //actually we don`t need that because while we are working with string we dont need that
+        //scanner.nextLine(); //actually we don`t need that because while we are working with string we dont need that
 
         for ( Book abuzer : books) {
             if (abuzer.getTitle().equalsIgnoreCase(choosedBook)) {
@@ -119,10 +119,11 @@ public class NeighborhoodLibrary {
                 abuzer.setCheckedOutTo(nameOfCustomer);
 
             }
-            System.out.println(nameOfCustomer + "taken" + choosedBook);
 
 
         }
+        System.out.println(nameOfCustomer + " taken " + choosedBook);
+
 
 
     }
