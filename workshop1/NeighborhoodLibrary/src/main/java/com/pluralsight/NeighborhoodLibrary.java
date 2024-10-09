@@ -3,11 +3,13 @@ package com.pluralsight;
 import java.util.Scanner;
 
 public class NeighborhoodLibrary {
-    //our library can have 20 books
+    //our library can have 20 books and we created an array for this.
     private static Book[] books = new Book[20];
 
+    //To can read and adapt user`s input to our system
     private static Scanner scanner = new Scanner(System.in);
 
+    //Our array of books
     public static void main(String[] args) {
 
         books[0] = new Book(111, "first", "firstbook", true, "Furkan");
@@ -31,7 +33,7 @@ public class NeighborhoodLibrary {
         books[18] = new Book(130, "19th", "19thbook", false, " ");
         books[19] = new Book(131, "2oth", "20thbook", false, " ");
 
-
+        //The user have to select one of these options otherwise app will be ended.
         while (true) {
             System.out.println("The Store Home Screen.");
             System.out.println("1- Show Available Books. (Displays a list of all books that are not currently checked out and displays Id, ISBN and Title of the Book)");
@@ -70,7 +72,7 @@ public class NeighborhoodLibrary {
         }
 
     }
-
+        //We created a
     public static void showAvailableBooks() {
         //Scanner scanner = new Scanner(System.in);
         System.out.println("List of available books: ");
@@ -81,8 +83,6 @@ public class NeighborhoodLibrary {
 
                 // String selection = scanner.nextLine();
                 // scanner.nextLine();
-
-
 
                 }
             }
@@ -98,12 +98,31 @@ public class NeighborhoodLibrary {
         }
 
         }
-    public static String bookCheckingOut() {
-        //Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter the name of the book");
-        String chosedBook = scanner.nextLine();
-        scanner.nextLine();
 
+
+
+
+    public static void bookCheckingOut() {
+        //Scanner scanner = new Scanner(System.in);
+        //We signed up our customer
+        System.out.println("Please enter your name?");
+        String nameOfCustomer = scanner.nextLine();
+
+        System.out.println("Please enter the name of the book");
+        String choosedBook = scanner.nextLine();
+        scanner.nextLine(); //actually we don`t need that because while we are working with string we dont need that
+
+        for ( Book abuzer : books) {
+            if (abuzer.getTitle().equalsIgnoreCase(choosedBook)) {
+                abuzer.setIsCheckedOut(true);
+
+                abuzer.setCheckedOutTo(nameOfCustomer);
+
+            }
+            System.out.println(nameOfCustomer + "taken" + choosedBook);
+
+
+        }
 
 
     }
